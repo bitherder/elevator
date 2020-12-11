@@ -1,10 +1,30 @@
 * Elevator
 
-*TODO: Add description*
+An API implementing the elevator algorithm with the following constraints:
+
+- an elevator of /n/ floors
+- an input for all floors can be takes simultaneously either up or down
+  - the top floor only has a down button
+  - the bottom floor only has an up button
+- inputs can be taken from within the elevator for:
+  - a specific floor
+    - the selection is pending (light lit) until the selected floor is reached
+  - to open (or hold open) the doors
+  - to close the doors
+- an elevator is isolated; i.e. elevators do not interact with each other
+- elevator states
+  - moving up from floor /n/ to /n+1/
+  - moving down from floor /n/ to /n-1/
+  - stopped at floor /n/ with
+    - doors closed
+    - doors fully open
+    - doors closing
+    - doors opening
+- aspects of weight and door safety are (currently) out of scope
 
 ** Installation
 
-If [[https://hex.pm/docs/publish][available in Hex]], the package can be installed by adding `elevator` to your list of dependencies in `mix.exs`:
+If [[https://hex.pm/docs/publish][available in Hex]], the package can be installed by adding =elevator= to your list of dependencies in =mix.exs=:
 
 #+begin_src elixir
 def deps do
